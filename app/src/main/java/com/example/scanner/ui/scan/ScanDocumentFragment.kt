@@ -114,14 +114,16 @@ class ScanDocumentFragment: Fragment(R.layout.fragment_document_scan) {
             runCatching {
                 cameraProvider.unbindAll()
                 imageAnalysis.setAnalyzer(
-                    ContextCompat.getMainExecutor(requireContext()),
-                    { proxy ->
-                        viewFinder.bitmap?.let {
-                            val corners = GetImageCorners().getDocumentEdges(it)
-                            if (corners != null) { hud.onCornersDetected(corners) }
+                    ContextCompat.getMainExecutor(requireContext())
+                ) { proxy ->
+                    viewFinder.bitmap?.let {
+                        val corners = GetImageCorners().getDocumentEdges(it)
+                        if (corners != null) {
+                            hud.onCornersDetected(corners)
                         }
-                        proxy.close()
-                    })
+                    }
+                    proxy.close()
+                }
                 camera = cameraProvider.bindToLifecycle(
                     this,
                     cameraSelector,

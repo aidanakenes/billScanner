@@ -10,10 +10,6 @@ import com.example.scanner.ui.crop.CropDocumentFragment
 import com.example.scanner.ui.documents.DocumentsFragment
 import com.example.scanner.ui.scan.ScanDocumentFragment
 
-/**
- * Created by Airat Khalilov on 17/09/2020.
- */
-
 class AppActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

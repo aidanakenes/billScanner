@@ -6,10 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.scanner.R
 import com.example.scanner.entity.Document
 
-/**
- * Created by Airat Khalilov on 17/09/2020.
- */
-
 class DocumentsAdapter: RecyclerView.Adapter<DocumentHolder>() {
 
     private var list: List<Document> = listOf()

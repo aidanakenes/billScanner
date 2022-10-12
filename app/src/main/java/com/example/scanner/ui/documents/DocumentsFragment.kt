@@ -17,10 +17,6 @@ import com.example.scanner.ui.documents.adapter.DocumentsAdapter
 import com.example.scanner.ui.scan.ScanDocumentFragment
 import kotlinx.android.synthetic.main.fragment_documents.*
 
-/**
- * Created by Airat Khalilov on 17/09/2020.
- */
-
 class DocumentsFragment: Fragment(R.layout.fragment_documents) {
 
     private val adapter by lazy {
