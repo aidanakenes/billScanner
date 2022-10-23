@@ -3,13 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.example.scanner"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
@@ -51,4 +51,11 @@ dependencies {
 
     implementation 'androidx.fragment:fragment-ktx:1.3.0-alpha08'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha07'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // InputMask
+    implementation 'com.redmadrobot:inputmask:2.3.0'
+
+    // Sms Confirmation
+    implementation 'com.github.fraggjkee:sms-confirmation-view:1.7.1'
 }

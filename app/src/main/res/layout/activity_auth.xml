@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_auth_ellipse" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    app:srcCompat="@drawable/ic_auth_illustration" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/sms_verification_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/sms_verification_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    tools:text="Мы отправили код подтверждения на номер +7 (707) 608 60 81" />
+
+                <com.fraggjkee.smsconfirmationview.SmsConfirmationView
+                    android:id="@+id/sms_confirmation_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/colorWhite"
+                    android:backgroundTint="@color/colorWhite"
+                    app:scv_codeLength="4"
+                    app:scv_showCursor="true"
+                    app:scv_smsDetectionMode="disabled"
+                    app:scv_symbolBackgroundColor="@color/colorWhite"
+                    app:scv_symbolBorderActiveColor="@color/colorPrimary"
+                    app:scv_symbolBorderColor="@color/colorPrimary"
+                    app:scv_symbolBorderCornerRadius="8dp"
+                    app:scv_symbolBorderWidth="1.5dp"
+                    app:scv_symbolHeight="52dp"
+                    app:scv_symbolTextColor="@color/colorTextMain"
+                    app:scv_symbolTextSize="24sp"
+                    app:scv_symbolWidth="50dp"
+                    app:scv_symbolsSpacing="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="@string/auth_sms_resend"
+                    android:textColor="@color/colorTextMain"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/phone_number_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/background_primary_rounded_stroked"
+                    android:digits="1234567890 -.+()"
+                    android:drawableStart="@drawable/ic_kazakhstan_flag"
+                    android:drawablePadding="12dp"
+                    android:hint="@string/auth_phone_field_hint"
+                    android:imeOptions="actionSend"
+                    android:inputType="numberDecimal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/colorTextMain"
+                    android:textColorHint="@color/colorTextFieldHintColor" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/send_code_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/background_primary_rounded_solid"
+                    android:stateListAnimator="@null"
+                    android:text="@string/auth_send_code"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/colorPrimary"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+
+</ScrollView>
